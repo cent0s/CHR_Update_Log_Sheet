@@ -77,9 +77,8 @@ with open("format_dashed.txt", 'r+') as f, open("value_dic.txt") as value_file:
         dict['LOG_FILE'] = line_split[5]
         dict['DATE_TIME'] = time_content[:21]
         dict['DETAIL_LOG'] = time_content[22:]
-        print dict
         MyList.append(dict)
 
 #  OK add to Mylist
 
-print MyList[0]
+print MyList[2]

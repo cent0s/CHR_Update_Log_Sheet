@@ -32,10 +32,12 @@ def clear_file(file_name):
 
 def delete_log_file():
     mydir = "C:\Users\OM-TRS\PycharmProjects\CHR_Update_Log_Sheet-master"
-    filelist_remove = glob.glob(os.path.join(mydir, "*.log"))
-    for f in filelist_remove:
+    filelist_remove_log = glob.glob(os.path.join(mydir, "*.log"))
+    filelist_remove_csv = glob.glob(os.path.join(mydir, "*.csv"))
+    for f in filelist_remove_log:
         os.remove(f)
-
+    for f in filelist_remove_csv:
+        os.remove(f)
 ####################### Function split log file to key file and value file##############################################
 def split_log_to_file(log_file):
     clear_file("key_dic.txt")
@@ -129,7 +131,7 @@ def get_duplicate_item_in_List(My_List_ERROR):
 
 
 #################### Get Detail Log from sheet to Compare ##############################################################
-def get_sheet_detail_log():
+def get_sheet_detail_log(name_sheet):
     scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
 
     credentials = ServiceAccountCredentials.from_json_keyfile_name("creds.json", scope)  # get email and key from creds
@@ -137,7 +139,7 @@ def get_sheet_detail_log():
     gfile = gspread.authorize(credentials)  # authenticate with Google
 
     sheet = gfile.open("OM_Statistics_Error_Log")
-    sheet_CHR = sheet.worksheet("CHR_UAT_WEEK_2018-09-03")
+    sheet_CHR = sheet.worksheet(name_sheet)
     content = sheet_CHR.get_all_records()
     # string_1 = "WARN [service.cluster.scheduler-2 AbstractServiceCluster.ping:267][service.cluster]failed to ping, member: XMember[id=8955265,appId=1,appName=server,processId=4427], service: AbstractServiceImporter.XServiceImpl[id=693682773730263041,bus=8955265,type=system.config.server,domain=CONFIG], cause: service: CONFIG.system.config.server"
     pp = pprint.PrettyPrinter()
@@ -152,7 +154,7 @@ def get_sheet_detail_log():
 
 
 
-def update_sheet(list_content_update):
+def update_sheet(list_content_update,name_sheet):
     scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
 
     credentials = ServiceAccountCredentials.from_json_keyfile_name("creds.json", scope)  # get email and key from creds
@@ -160,7 +162,7 @@ def update_sheet(list_content_update):
     gfile = gspread.authorize(credentials)  # authenticate with Google
 
     sheet = gfile.open("OM_Statistics_Error_Log")
-    sheet_CHR = sheet.worksheet("CHR_UAT_WEEK_2018-09-03")
+    sheet_CHR = sheet.worksheet(name_sheet)
     content_sheet = sheet_CHR.get_all_records()
     start_line = content_sheet.__len__() + 2
     sheet_CHR.update_cell(start_line,2,content_sheet.__len__() + 1)
@@ -180,7 +182,7 @@ def get_duplicate_item():
     gfile = gspread.authorize(credentials)  # authenticate with Google
 
     sheet = gfile.open("OM_Statistics_Error_Log")
-    sheet_CHR = sheet.worksheet("CHR_UAT_WEEK_2018-09-03")
+    sheet_CHR = sheet.worksheet("CHR_UAT_2018")
     content_sheet = sheet_CHR.get_all_records()
     list_index_dulice = []
     for i in range(0, content_sheet.__len__()):
@@ -198,7 +200,7 @@ def delete_item_duplicate(d_list):
     gfile = gspread.authorize(credentials)  # authenticate with Google
 
     sheet = gfile.open("OM_Statistics_Error_Log")
-    sheet_CHR = sheet.worksheet("CHR_UAT_WEEK_2018-09-03")
+    sheet_CHR = sheet.worksheet("CHR_UAT_2018")
     content_sheet = sheet_CHR.get_all_records()
     sheet_CHR.delete_row(d_list[0])
 
@@ -211,34 +213,44 @@ def get_string_today():
 def get_all_file_from_server():
     List_all_file = os.listdir('\\\\10.1.1.45\public\CHR_LOG\UATVN')
     return List_all_file
+
 def get_all_file_today_from_server():
     string_today = get_string_today()
+    extend_file = "csv"
     list_all_file = get_all_file_from_server()
     list_all_file_modify_today = []
     for i in range(0,list_all_file.__len__()):
-        if string_today in list_all_file[i]:
+        if string_today in list_all_file[i] and extend_file not in list_all_file[i]:
             list_all_file_modify_today.append(list_all_file[i])
 
     return list_all_file_modify_today
+
+
 def copy_today_file_from_server_to_local():
     src_path = "\\\\10.1.1.45\public\CHR_LOG\UATVN\\"
     des_path = "C:\Users\OM-TRS\PycharmProjects\CHR_Update_Log_Sheet-master"
     list_file_need_copy_today = get_all_file_today_from_server()
     for i in range(0,list_file_need_copy_today.__len__()):
-        shutil.copy2(src_path + str(list_file_need_copy_today[i]) , des_path)  # complete target filename given
+        shutil.copy2((src_path + str(list_file_need_copy_today[i])) , des_path)  # complete target filename given
 
-
+def list_all_log_file_local():
+    list_log_file = glob.glob("*.log")
+    return list_log_file
 
 if __name__ == '__main__':
-    # copy_today_file_from_server_to_local()
-    log_file_path = glob.glob("*.log")
+    copy_today_file_from_server_to_local()
+    ################################################
+    nameWeekSheet = open("Week_sheet_name.txt").read()
+    log_file_path = list_all_log_file_local()
+    # print log_file_path
+
     for i in range(0, log_file_path.__len__()):
         split_log_to_file(log_file_path[i])
         List_Error = gen_dic()
         Rest_list = get_duplicate_item_in_List(List_Error)
         print Rest_list
         # print List_Error[List_Error.__len__() - 1]['DETAIL_LOG']
-        List_Error_Sheet = get_sheet_detail_log()
+        List_Error_Sheet = get_sheet_detail_log(str(nameWeekSheet))
         # print str(List_Error_Sheet[List_Error_Sheet.__len__() - 2])
         # if List_Error[List_Error.__len__() - 1]['DETAIL_LOG'].rstrip() == List_Error_Sheet[List_Error_Sheet.__len__() - 2]:
         #     print 'OK'
@@ -246,12 +258,15 @@ if __name__ == '__main__':
         #     print "NOT OK"
         for i in range(0, Rest_list.__len__()):
             if List_Error[Rest_list[i]]['DETAIL_LOG'].rstrip() not in List_Error_Sheet:
-                update_sheet(List_Error[Rest_list[i]])
-                List_Error_Sheet = get_sheet_detail_log()
+                update_sheet(List_Error[Rest_list[i]],str(nameWeekSheet))
+                List_Error_Sheet = get_sheet_detail_log(str(nameWeekSheet))
             else:
                 print "This log was exist !"
-    delete_log_file()
 
+
+
+    delete_log_file()
+    ################################################
     # delete from sheet FAIL #######################################
     # List_item_duplicate = get_duplicate_item()
     # while List_item_duplicate.__len__() > 0:

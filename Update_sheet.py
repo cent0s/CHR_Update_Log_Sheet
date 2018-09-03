@@ -5,13 +5,10 @@ import json
 import pprint
 import time
 import re
-import shutil
-from datetime import date
-import glob, os, os.path
 from difflib import SequenceMatcher
 from oauth2client.service_account import ServiceAccountCredentials
 
-
+log_file_path = "chr-error-logs-2018.log"
 pattern1 = '====== HOST'
 
 def update_key_dic(key):
@@ -30,17 +27,11 @@ def clear_file(file_name):
     file.close()
     time.sleep(1)
 
-def delete_log_file():
-    mydir = "C:\Users\OM-TRS\PycharmProjects\CHR_Update_Log_Sheet-master"
-    filelist_remove = glob.glob(os.path.join(mydir, "*.log"))
-    for f in filelist_remove:
-        os.remove(f)
-
 ####################### Function split log file to key file and value file##############################################
 def split_log_to_file(log_file):
     clear_file("key_dic.txt")
     clear_file("value_dic.txt")
-    with open(log_file, 'r+') as f:
+    with open(log_file_path, 'r+') as f:
         lines = f.readlines()
         for i in range(0, len(lines)):
             line = lines[i]
@@ -115,8 +106,7 @@ def get_duplicate_item_in_List(My_List_ERROR):
     for e in Full_list:
         if e not in list(set(Dup_List)):
             Res_list.append(e)
-# https://stackoverflow.com/questions/35731289/function-to-remove-duplicates-from-a-list-python?lq=1
-# https://stackoverflow.com/questions/16603282/how-to-compare-each-item-in-a-list-with-the-rest-only-once
+
     return Res_list
 
 # def delete_duplicate_item_in_List(Duplicate_List,Full_List):
@@ -137,9 +127,9 @@ def get_sheet_detail_log():
     gfile = gspread.authorize(credentials)  # authenticate with Google
 
     sheet = gfile.open("OM_Statistics_Error_Log")
-    sheet_CHR = sheet.worksheet("CHR_UAT_WEEK_2018-09-03")
+    sheet_CHR = sheet.worksheet("CHR_UAT_2018")
     content = sheet_CHR.get_all_records()
-    # string_1 = "WARN [service.cluster.scheduler-2 AbstractServiceCluster.ping:267][service.cluster]failed to ping, member: XMember[id=8955265,appId=1,appName=server,processId=4427], service: AbstractServiceImporter.XServiceImpl[id=693682773730263041,bus=8955265,type=system.config.server,domain=CONFIG], cause: service: CONFIG.system.config.server"
+    string_1 = "WARN [service.cluster.scheduler-2 AbstractServiceCluster.ping:267][service.cluster]failed to ping, member: XMember[id=8955265,appId=1,appName=server,processId=4427], service: AbstractServiceImporter.XServiceImpl[id=693682773730263041,bus=8955265,type=system.config.server,domain=CONFIG], cause: service: CONFIG.system.config.server"
     pp = pprint.PrettyPrinter()
     # pp.pprint(content.__len__())
     # pp.pprint(content[0]['Detail of log'])
@@ -160,7 +150,7 @@ def update_sheet(list_content_update):
     gfile = gspread.authorize(credentials)  # authenticate with Google
 
     sheet = gfile.open("OM_Statistics_Error_Log")
-    sheet_CHR = sheet.worksheet("CHR_UAT_WEEK_2018-09-03")
+    sheet_CHR = sheet.worksheet("CHR_UAT_2018")
     content_sheet = sheet_CHR.get_all_records()
     start_line = content_sheet.__len__() + 2
     sheet_CHR.update_cell(start_line,2,content_sheet.__len__() + 1)
@@ -180,7 +170,7 @@ def get_duplicate_item():
     gfile = gspread.authorize(credentials)  # authenticate with Google
 
     sheet = gfile.open("OM_Statistics_Error_Log")
-    sheet_CHR = sheet.worksheet("CHR_UAT_WEEK_2018-09-03")
+    sheet_CHR = sheet.worksheet("CHR_UAT_2018")
     content_sheet = sheet_CHR.get_all_records()
     list_index_dulice = []
     for i in range(0, content_sheet.__len__()):
@@ -198,59 +188,31 @@ def delete_item_duplicate(d_list):
     gfile = gspread.authorize(credentials)  # authenticate with Google
 
     sheet = gfile.open("OM_Statistics_Error_Log")
-    sheet_CHR = sheet.worksheet("CHR_UAT_WEEK_2018-09-03")
+    sheet_CHR = sheet.worksheet("CHR_UAT_2018")
     content_sheet = sheet_CHR.get_all_records()
     sheet_CHR.delete_row(d_list[0])
 
-#################### Function copy today file from 10.1.1.45 to local ##############################
-def get_string_today():
-    Today_Date = date.today().isoformat()
-    return str(Today_Date)
-
-
-def get_all_file_from_server():
-    List_all_file = os.listdir('\\\\10.1.1.45\public\CHR_LOG\UATVN')
-    return List_all_file
-def get_all_file_today_from_server():
-    string_today = get_string_today()
-    list_all_file = get_all_file_from_server()
-    list_all_file_modify_today = []
-    for i in range(0,list_all_file.__len__()):
-        if string_today in list_all_file[i]:
-            list_all_file_modify_today.append(list_all_file[i])
-
-    return list_all_file_modify_today
-def copy_today_file_from_server_to_local():
-    src_path = "\\\\10.1.1.45\public\CHR_LOG\UATVN\\"
-    des_path = "C:\Users\OM-TRS\PycharmProjects\CHR_Update_Log_Sheet-master"
-    list_file_need_copy_today = get_all_file_today_from_server()
-    for i in range(0,list_file_need_copy_today.__len__()):
-        shutil.copy2(src_path + str(list_file_need_copy_today[i]) , des_path)  # complete target filename given
 
 
 
 if __name__ == '__main__':
-    # copy_today_file_from_server_to_local()
-    log_file_path = glob.glob("*.log")
-    for i in range(0, log_file_path.__len__()):
-        split_log_to_file(log_file_path[i])
-        List_Error = gen_dic()
-        Rest_list = get_duplicate_item_in_List(List_Error)
-        print Rest_list
-        # print List_Error[List_Error.__len__() - 1]['DETAIL_LOG']
-        List_Error_Sheet = get_sheet_detail_log()
-        # print str(List_Error_Sheet[List_Error_Sheet.__len__() - 2])
-        # if List_Error[List_Error.__len__() - 1]['DETAIL_LOG'].rstrip() == List_Error_Sheet[List_Error_Sheet.__len__() - 2]:
-        #     print 'OK'
-        # else:
-        #     print "NOT OK"
-        for i in range(0, Rest_list.__len__()):
-            if List_Error[Rest_list[i]]['DETAIL_LOG'].rstrip() not in List_Error_Sheet:
-                update_sheet(List_Error[Rest_list[i]])
-                List_Error_Sheet = get_sheet_detail_log()
-            else:
-                print "This log was exist !"
-    delete_log_file()
+    split_log_to_file(log_file_path)
+    List_Error = gen_dic()
+    Rest_list = get_duplicate_item_in_List(List_Error)
+    print Rest_list
+    # print List_Error[List_Error.__len__() - 1]['DETAIL_LOG']
+    List_Error_Sheet = get_sheet_detail_log()
+    # print str(List_Error_Sheet[List_Error_Sheet.__len__() - 2])
+    # if List_Error[List_Error.__len__() - 1]['DETAIL_LOG'].rstrip() == List_Error_Sheet[List_Error_Sheet.__len__() - 2]:
+    #     print 'OK'
+    # else:
+    #     print "NOT OK"
+    for i in range(0, Rest_list.__len__()):
+        if List_Error[Rest_list[i]]['DETAIL_LOG'].rstrip() not in List_Error_Sheet:
+            update_sheet(List_Error[Rest_list[i]])
+            List_Error_Sheet = get_sheet_detail_log()
+        else:
+            print "This log was exist !"
 
     # delete from sheet FAIL #######################################
     # List_item_duplicate = get_duplicate_item()

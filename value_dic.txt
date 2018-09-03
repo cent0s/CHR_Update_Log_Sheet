@@ -1,121 +1,24 @@
-18-08-13 11:01:47.217 WARN [org.eclipse.jetty.server.session.HashSessionManager@d5eca06Timer session.scavenge:362]Problem scavenging sessions
-18-08-13 11:02:17.218 WARN [org.eclipse.jetty.server.session.HashSessionManager@d5eca06Timer session.scavenge:362]Problem scavenging sessions
-18-08-13 11:03:17.220 WARN [org.eclipse.jetty.server.session.HashSessionManager@d5eca06Timer session.scavenge:362]Problem scavenging sessions
-18-08-13 11:03:17.220 WARN [org.eclipse.jetty.server.session.HashSessionManager@d5eca06Timer session.scavenge:362]Problem scavenging sessions
-18-08-13 11:05:34.116 WARN [wallet.persister.database AbstractJournaler.loop:346][wallet.persister.database]failed to seek: 692099923671257141
-18-08-13 11:05:34.066 WARN [customer.persister.database AbstractJournaler.loop:346][customer.persister.database]failed to seek: 692474346093958189
-18-08-13 11:05:34.166 WARN [payment.persister.database AbstractJournaler.loop:346][payment.persister.database]failed to seek: 692373569912439333
-18-08-13 11:07:01.016 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: API, key: CUSTOMER_MONIOTR_ENABLED
-18-08-13 11:07:01.030 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: API, key: PAYMENT_MONIOTR_ENABLED
-18-08-13 11:07:01.039 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: API, key: WALLET_MONIOTR_ENABLED
-18-08-13 11:07:01.044 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: API, key: BATCH_NEWS_SCHEDULE_TIME_BEFORE
-18-08-13 11:07:01.105 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: CUSTOMER_REPORT_TEMPLATE_PATH
-18-08-13 11:07:01.110 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: PAYMENT_SNAPSHOT_SCAN_RETRIES
-18-08-13 11:07:01.154 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SCHEDULE_ENABLE_MONITOR_JOBS
-18-08-13 11:07:01.158 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SCHEDULE_VALIDATE_END_OF_WEEK_DAY
-18-08-13 11:07:01.093 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: CUSTOMER_REPORT_PATH
-18-08-13 11:07:01.100 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: SYSTEM_REPORT_TEMPLATE_PATH
-18-08-13 11:07:01.145 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SAVE_DB_INTERVAL_TIME
-18-08-13 11:07:01.149 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SCHEDULE_DELAY_SEND_SECONDS
-18-08-13 11:07:01.047 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: DEBUG, key: COMMON_VALIDATOR_VERBOSE
-18-08-13 11:07:01.063 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: COMPANY_CACHE_CAPACITY
-18-08-13 11:07:01.115 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: CUSTOMER_SNAPSHOT_SCAN_RETRIES
-18-08-13 11:07:01.119 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_TRACE_URL
-18-08-13 11:07:01.125 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SAVE_DB_SLEEP
-18-08-13 11:07:01.163 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SCHEDULE_VALIDATE_END_OF_WEEK_TIME
-18-08-13 11:07:01.068 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: COMPANY_INDEX_CAPACITY
-18-08-13 11:07:01.078 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: CUSTOMER_REPORT_CACHE_CAPACITY
-18-08-13 11:07:01.083 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: CUSTOMER_REPORT_INDEX_CAPACITY
-18-08-13 11:07:01.088 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: SYSTEM_REPORT_PATH
-18-08-13 11:07:01.130 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_REQUEST_TIMEOUT
-18-08-13 11:07:01.135 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SAVE_DB_BATCH_SIZE
-18-08-13 11:07:01.140 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SAVE_DB_RETRY_TIME
-18-08-13 11:07:01.055 WARN [common.system.administrator.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: CUSTOMER_REPORT_INDEX_CAPACITY
-18-08-13 11:07:01.085 WARN [common.system.administrator.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SAVE_DB_BATCH_SIZE
-18-08-13 11:07:01.092 WARN [common.system.administrator.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SAVE_DB_RETRY_TIME
-18-08-13 11:07:01.058 WARN [common.system.administrator.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: SYSTEM_REPORT_PATH
-18-08-13 11:07:01.061 WARN [common.system.administrator.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: CUSTOMER_REPORT_PATH
-18-08-13 11:07:01.063 WARN [common.system.administrator.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: SYSTEM_REPORT_TEMPLATE_PATH
-18-08-13 11:07:01.095 WARN [common.system.administrator.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SAVE_DB_INTERVAL_TIME
-18-08-13 11:07:01.075 WARN [common.system.administrator.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_TRACE_URL
-18-08-13 11:07:01.103 WARN [common.system.administrator.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SCHEDULE_VALIDATE_END_OF_WEEK_DAY
-18-08-13 11:07:01.027 WARN [common.system.administrator.scheduler-2 XConfig.get:171]get[MISS], domain: API, key: PAYMENT_MONIOTR_ENABLED
-18-08-13 11:07:01.033 WARN [common.system.administrator.scheduler-2 XConfig.get:171]get[MISS], domain: API, key: WALLET_MONIOTR_ENABLED
-18-08-13 11:07:01.035 WARN [common.system.administrator.scheduler-2 XConfig.get:171]get[MISS], domain: API, key: BATCH_NEWS_SCHEDULE_TIME_BEFORE
-18-08-13 11:07:01.036 WARN [common.system.administrator.scheduler-2 XConfig.get:171]get[MISS], domain: DEBUG, key: COMMON_VALIDATOR_VERBOSE
-18-08-13 11:07:01.043 WARN [common.system.administrator.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: COMPANY_CACHE_CAPACITY
-18-08-13 11:07:01.047 WARN [common.system.administrator.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: COMPANY_INDEX_CAPACITY
-18-08-13 11:07:01.050 WARN [common.system.administrator.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: CUSTOMER_REPORT_CACHE_CAPACITY
-18-08-13 11:07:01.082 WARN [common.system.administrator.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_REQUEST_TIMEOUT
-18-08-13 11:07:01.068 WARN [common.system.administrator.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: CUSTOMER_REPORT_TEMPLATE_PATH
-18-08-13 11:07:01.073 WARN [common.system.administrator.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: CUSTOMER_SNAPSHOT_SCAN_RETRIES
-18-08-13 11:07:01.101 WARN [common.system.administrator.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SCHEDULE_ENABLE_MONITOR_JOBS
-18-08-13 11:07:01.071 WARN [common.system.administrator.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: PAYMENT_SNAPSHOT_SCAN_RETRIES
-18-08-13 11:07:01.098 WARN [common.system.administrator.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SCHEDULE_DELAY_SEND_SECONDS
-18-08-13 11:07:01.024 WARN [common.system.administrator.scheduler-2 XConfig.get:171]get[MISS], domain: API, key: CUSTOMER_MONIOTR_ENABLED
-18-08-13 11:07:01.079 WARN [common.system.administrator.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SAVE_DB_SLEEP
-18-08-13 11:07:01.106 WARN [common.system.administrator.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SCHEDULE_VALIDATE_END_OF_WEEK_TIME
-18-08-13 11:07:01.168 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SCHEDULE_VALIDATE_STOP_SEND_BEFORE_MAINTAIN_MINUTES
-18-08-13 11:07:01.108 WARN [common.system.administrator.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SCHEDULE_VALIDATE_STOP_SEND_BEFORE_MAINTAIN_MINUTES
-18-08-13 11:08:01.023 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: API, key: PAYMENT_MONIOTR_ENABLED
-18-08-13 11:08:01.073 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: SYSTEM_REPORT_PATH
-18-08-13 11:08:01.120 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_REQUEST_TIMEOUT
-18-08-13 11:08:01.011 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: API, key: CUSTOMER_MONIOTR_ENABLED
-18-08-13 11:08:01.065 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: CUSTOMER_REPORT_INDEX_CAPACITY
-18-08-13 11:08:01.113 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SAVE_DB_SLEEP
-18-08-13 11:08:01.153 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SCHEDULE_VALIDATE_END_OF_WEEK_TIME
-18-08-13 11:08:01.030 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: API, key: WALLET_MONIOTR_ENABLED
-18-08-13 11:08:01.077 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: CUSTOMER_REPORT_PATH
-18-08-13 11:08:01.125 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SAVE_DB_BATCH_SIZE
-18-08-13 11:08:01.039 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: DEBUG, key: COMMON_VALIDATOR_VERBOSE
-18-08-13 11:08:01.088 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: CUSTOMER_REPORT_TEMPLATE_PATH
-18-08-13 11:08:01.135 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SAVE_DB_INTERVAL_TIME
-18-08-13 11:08:01.059 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: CUSTOMER_REPORT_CACHE_CAPACITY
-18-08-13 11:08:01.109 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_TRACE_URL
-18-08-13 11:08:01.147 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SCHEDULE_VALIDATE_END_OF_WEEK_DAY
-18-08-13 11:08:01.055 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: COMPANY_INDEX_CAPACITY
-18-08-13 11:08:01.100 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: CUSTOMER_SNAPSHOT_SCAN_RETRIES
-18-08-13 11:08:01.143 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SCHEDULE_ENABLE_MONITOR_JOBS
-18-08-13 11:08:01.035 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: API, key: BATCH_NEWS_SCHEDULE_TIME_BEFORE
-18-08-13 11:08:01.083 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: SYSTEM_REPORT_TEMPLATE_PATH
-18-08-13 11:08:01.130 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SAVE_DB_RETRY_TIME
-18-08-13 11:08:01.050 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: COMPANY_CACHE_CAPACITY
-18-08-13 11:08:01.095 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: PAYMENT_SNAPSHOT_SCAN_RETRIES
-18-08-13 11:08:01.139 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SCHEDULE_DELAY_SEND_SECONDS
-18-08-13 11:08:01.077 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: SYSTEM_REPORT_PATH
-18-08-13 11:08:01.092 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: CUSTOMER_REPORT_TEMPLATE_PATH
-18-08-13 11:08:01.097 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: PAYMENT_SNAPSHOT_SCAN_RETRIES
-18-08-13 11:08:01.136 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SAVE_DB_RETRY_TIME
-18-08-13 11:08:01.087 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: SYSTEM_REPORT_TEMPLATE_PATH
-18-08-13 11:08:01.131 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SAVE_DB_BATCH_SIZE
-18-08-13 11:08:01.147 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SCHEDULE_DELAY_SEND_SECONDS
-18-08-13 11:08:01.153 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SCHEDULE_ENABLE_MONITOR_JOBS
-18-08-13 11:08:01.081 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: CUSTOMER_REPORT_PATH
-18-08-13 11:08:01.142 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SAVE_DB_INTERVAL_TIME
-18-08-13 11:08:01.027 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: API, key: CUSTOMER_MONIOTR_ENABLED
-18-08-13 11:08:01.034 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: API, key: PAYMENT_MONIOTR_ENABLED
-18-08-13 11:08:01.039 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: API, key: WALLET_MONIOTR_ENABLED
-18-08-13 11:08:01.044 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: API, key: BATCH_NEWS_SCHEDULE_TIME_BEFORE
-18-08-13 11:08:01.047 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: DEBUG, key: COMMON_VALIDATOR_VERBOSE
-18-08-13 11:08:01.052 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: COMPANY_CACHE_CAPACITY
-18-08-13 11:08:01.059 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: COMPANY_INDEX_CAPACITY
-18-08-13 11:08:01.066 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: CUSTOMER_REPORT_CACHE_CAPACITY
-18-08-13 11:08:01.072 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: CUSTOMER_REPORT_INDEX_CAPACITY
-18-08-13 11:08:01.108 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: SYNC, key: CUSTOMER_SNAPSHOT_SCAN_RETRIES
-18-08-13 11:08:01.115 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_TRACE_URL
-18-08-13 11:08:01.120 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SAVE_DB_SLEEP
-18-08-13 11:08:01.125 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_REQUEST_TIMEOUT
-18-08-13 11:08:01.164 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SCHEDULE_VALIDATE_END_OF_WEEK_DAY
-18-08-13 11:08:01.172 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SCHEDULE_VALIDATE_END_OF_WEEK_TIME
-18-08-13 11:08:01.163 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SCHEDULE_VALIDATE_STOP_SEND_BEFORE_MAINTAIN_MINUTES
-18-08-13 11:08:01.181 WARN [common.system.manager.scheduler-2 XConfig.get:171]get[MISS], domain: WALLET, key: MAIL_SCHEDULE_VALIDATE_STOP_SEND_BEFORE_MAINTAIN_MINUTES
-18-08-13 11:08:37.905 ERROR[main MailSchedulerMng.loadScheduleConfig:206]Can't get mailTemplate by ID: 48297
-18-08-13 11:08:37.945 ERROR[main MailSchedulerMng.loadScheduleConfig:206]Can't get mailTemplate by ID: 48329
-18-08-13 11:08:37.935 ERROR[main MailSchedulerMng.loadScheduleConfig:206]Can't get mailTemplate by ID: 48297
-18-08-13 11:08:37.925 ERROR[main MailSchedulerMng.loadScheduleConfig:206]Can't get mailTemplate by ID: 48297
-18-08-13 11:08:37.910 ERROR[main MailSchedulerMng.loadScheduleConfig:206]Can't get mailTemplate by ID: 48297
-18-08-13 11:08:37.920 ERROR[main MailSchedulerMng.loadScheduleConfig:206]Can't get mailTemplate by ID: 48297
-18-08-13 11:08:37.914 ERROR[main MailSchedulerMng.loadScheduleConfig:206]Can't get mailTemplate by ID: 48297
-18-08-13 11:08:37.930 ERROR[main MailSchedulerMng.loadScheduleConfig:206]Can't get mailTemplate by ID: 48297
-18-08-13 11:08:37.896 ERROR[main MailSchedulerMng.loadScheduleConfig:206]Can't get mailTemplate by ID: 48297
-18-08-13 11:08:37.941 ERROR[main MailSchedulerMng.loadScheduleConfig:206]Can't get mailTemplate by ID: 48297
+18-09-03 02:18:54.295 WARN [service.cluster.scheduler-1 XHeartbeat.sweep:160]sweep key: 250053889, value: XMember[id=250053889,appId=29,appName=mailservice,processId=53002], retries: 1, timestamp: 2018-09-03 02:18:35.493
+18-09-03 02:18:54.296 WARN [service.cluster.scheduler-1 XHeartbeat.sweep:160]sweep key: 48792833, value: XMember[id=48792833,appId=5,appName=batch,processId=53514], retries: 1, timestamp: 2018-09-03 02:18:37.871
+18-09-03 02:18:54.296 WARN [service.cluster.scheduler-1 XHeartbeat.sweep:160]sweep key: 719848193, value: XMember[id=719848193,appId=85,appName=ams.api.wallet,processId=53254], retries: 1, timestamp: 2018-09-03 02:18:36.566
+18-09-03 02:18:54.296 WARN [service.cluster.scheduler-1 XHeartbeat.sweep:160]sweep key: 149483521, value: XMember[id=149483521,appId=17,appName=mailscheduler,processId=53728], retries: 1, timestamp: 2018-09-03 02:18:38.188
+18-09-03 02:18:54.297 WARN [service.cluster.scheduler-1 XHeartbeat.sweep:160]sweep key: 149483522, value: XMember[id=149483522,appId=17,appName=mailscheduler,processId=53728], retries: 1, timestamp: 2018-09-03 02:18:34.519
+18-09-03 02:18:54.297 WARN [service.cluster.scheduler-1 XHeartbeat.sweep:160]sweep key: 115961218, value: XMember[id=115961218,appId=13,appName=ams.api.coin.trading,processId=53979], retries: 1, timestamp: 2018-09-03 02:18:34.855
+18-09-03 02:19:24.299 WARN [service.cluster.scheduler-1 XHeartbeat.sweep:160]sweep key: 149483521, value: XMember[id=149483521,appId=17,appName=mailscheduler,processId=53728], retries: 1, timestamp: 2018-09-03 02:19:08.192
+18-09-03 02:19:24.300 WARN [service.cluster.scheduler-1 XHeartbeat.sweep:160]sweep key: 719848194, value: XMember[id=719848194,appId=85,appName=ams.api.wallet,processId=53254], retries: 1, timestamp: 2018-09-03 02:19:00.965
+18-09-03 02:19:24.300 WARN [service.cluster.scheduler-1 XHeartbeat.sweep:160]sweep key: 149483522, value: XMember[id=149483522,appId=17,appName=mailscheduler,processId=53728], retries: 1, timestamp: 2018-09-03 02:19:04.522
+18-09-03 02:19:24.299 WARN [service.cluster.scheduler-1 XHeartbeat.sweep:160]sweep key: 48792833, value: XMember[id=48792833,appId=5,appName=batch,processId=53514], retries: 1, timestamp: 2018-09-03 02:19:07.876
+18-09-03 02:19:24.298 WARN [service.cluster.scheduler-1 XHeartbeat.sweep:160]sweep key: 250053889, value: XMember[id=250053889,appId=29,appName=mailservice,processId=53002], retries: 1, timestamp: 2018-09-03 02:19:05.495
+18-09-03 02:19:24.299 WARN [service.cluster.scheduler-1 XHeartbeat.sweep:160]sweep key: 719848193, value: XMember[id=719848193,appId=85,appName=ams.api.wallet,processId=53254], retries: 1, timestamp: 2018-09-03 02:19:06.567
+18-09-03 02:19:24.300 WARN [service.cluster.scheduler-1 XHeartbeat.sweep:160]sweep key: 115961218, value: XMember[id=115961218,appId=13,appName=ams.api.coin.trading,processId=53979], retries: 1, timestamp: 2018-09-03 02:19:04.858
+18-09-03 02:19:54.301 WARN [service.cluster.scheduler-1 XHeartbeat.sweep:160]sweep key: 250053889, value: XMember[id=250053889,appId=29,appName=mailservice,processId=53002], retries: 1, timestamp: 2018-09-03 02:19:35.499
+18-09-03 02:19:54.302 WARN [service.cluster.scheduler-1 XHeartbeat.sweep:160]sweep key: 719848193, value: XMember[id=719848193,appId=85,appName=ams.api.wallet,processId=53254], retries: 1, timestamp: 2018-09-03 02:19:36.570
+18-09-03 02:19:54.302 WARN [service.cluster.scheduler-1 XHeartbeat.sweep:160]sweep key: 149483522, value: XMember[id=149483522,appId=17,appName=mailscheduler,processId=53728], retries: 1, timestamp: 2018-09-03 02:19:34.526
+18-09-03 02:20:04.303 WARN [service.cluster.scheduler-1 XHeartbeat.sweep:160]sweep key: 149483521, value: XMember[id=149483521,appId=17,appName=mailscheduler,processId=53728], retries: 1, timestamp: 2018-09-03 02:19:48.195
+18-09-03 02:19:54.302 WARN [service.cluster.scheduler-1 XHeartbeat.sweep:160]sweep key: 115961218, value: XMember[id=115961218,appId=13,appName=ams.api.coin.trading,processId=53979], retries: 1, timestamp: 2018-09-03 02:19:34.860
+18-09-03 02:22:14.305 WARN [service.cluster.scheduler-1 XHeartbeat.sweep:160]sweep key: 149483522, value: XMember[id=149483522,appId=17,appName=mailscheduler,processId=53728], retries: 1, timestamp: 2018-09-03 02:21:54.536
+18-09-03 02:22:14.306 WARN [service.cluster.scheduler-1 XHeartbeat.sweep:160]sweep key: 115961218, value: XMember[id=115961218,appId=13,appName=ams.api.coin.trading,processId=53979], retries: 1, timestamp: 2018-09-03 02:21:54.869
+18-09-03 02:24:44.309 WARN [service.cluster.scheduler-1 XHeartbeat.sweep:160]sweep key: 250053889, value: XMember[id=250053889,appId=29,appName=mailservice,processId=53002], retries: 1, timestamp: 2018-09-03 02:24:25.518
+18-09-03 02:24:44.310 WARN [service.cluster.scheduler-1 XHeartbeat.sweep:160]sweep key: 719848193, value: XMember[id=719848193,appId=85,appName=ams.api.wallet,processId=53254], retries: 1, timestamp: 2018-09-03 02:24:26.588
+18-09-03 02:24:44.310 WARN [service.cluster.scheduler-1 XHeartbeat.sweep:160]sweep key: 48792833, value: XMember[id=48792833,appId=5,appName=batch,processId=53514], retries: 1, timestamp: 2018-09-03 02:24:27.899
+18-09-03 02:24:44.310 WARN [service.cluster.scheduler-1 XHeartbeat.sweep:160]sweep key: 149483521, value: XMember[id=149483521,appId=17,appName=mailscheduler,processId=53728], retries: 1, timestamp: 2018-09-03 02:24:28.210
